@@ -12,12 +12,15 @@ def init_db():
     conn.commit()
     conn.close()
 
-# 1. Serve Frontend
+# Initialize database on startup
+with app.app_context():
+    init_db()
+
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# 2. API: Get all items
+# API: Get all items
 @app.route('/api/items', methods=['GET'])
 def get_items():
     conn = sqlite3.connect('inventory.db')
@@ -27,7 +30,7 @@ def get_items():
     conn.close()
     return jsonify(items)
 
-# 3. API: Add item
+# API: Add item
 @app.route('/api/add', methods=['POST'])
 def add_item():
     data = request.json
@@ -39,7 +42,7 @@ def add_item():
     conn.close()
     return jsonify({'status': 'success'})
 
-# 4. API: Update item quantity
+# API: Update item quantity
 @app.route('/api/update/<int:id>', methods=['PUT'])
 def update_item(id):
     data = request.json
@@ -50,7 +53,7 @@ def update_item(id):
     conn.close()
     return jsonify({'status': 'updated'})
 
-# 5. API: Delete item
+# API: Delete item
 @app.route('/api/delete/<int:id>', methods=['DELETE'])
 def delete_item(id):
     conn = sqlite3.connect('inventory.db')
@@ -59,10 +62,6 @@ def delete_item(id):
     conn.commit()
     conn.close()
     return jsonify({'status': 'deleted'})
-
-# Database initialize karo (Production ke liye zaroori)
-with app.app_context():
-    init_db()
 
 if __name__ == '__main__':
     app.run(debug=True)
