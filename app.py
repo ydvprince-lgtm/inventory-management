@@ -60,6 +60,9 @@ def delete_item(id):
     conn.close()
     return jsonify({'status': 'deleted'})
 
-if __name__ == '__main__':
+# Database initialize karo (Production ke liye zaroori)
+with app.app_context():
     init_db()
+
+if __name__ == '__main__':
     app.run(debug=True)
