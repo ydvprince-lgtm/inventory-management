@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud Inventory Dashboard</title>
-    <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
     <div class="dashboard">
-        <!-- Header -->
+        <!-- Header with Toggle -->
         <header class="header">
             <h1><i class="fa-solid fa-boxes-stacked"></i> Cloud-Based Inventory</h1>
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchInput" placeholder="Search products...">
+            <div class="header-controls">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                <button id="themeToggle" class="theme-btn" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
             </div>
         </header>
 
-        <!-- Stats Cards (Dashboard Feel) -->
+        <!-- Stats Cards -->
         <div class="stats-grid">
             <div class="stat-card">
                 <h3>Total Products</h3>
@@ -49,6 +54,18 @@
             </div>
         </div>
 
+        <!-- Charts Section -->
+        <div class="card charts-grid">
+            <div>
+                <h2>Category Analytics</h2>
+                <div class="chart-container"><canvas id="categoryChart"></canvas></div>
+            </div>
+            <div>
+                <h2>Stock Levels</h2>
+                <div class="chart-container"><canvas id="stockChart"></canvas></div>
+            </div>
+        </div>
+
         <!-- Table Card -->
         <div class="card table-card">
             <h2>Inventory List</h2>
@@ -67,9 +84,9 @@
         </div>
     </div>
 
-    <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
-    <script src="/static/script.js"></script>
+    <!-- IMPORTANT: Use ?v=4 to clear old cache -->
+    <script src="/static/script.js?v=4"></script>
 </body>
 </html>
