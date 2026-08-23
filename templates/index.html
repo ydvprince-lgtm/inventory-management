@@ -3,34 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Inventory System</title>
+    <title>Cloud Inventory Dashboard</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>📦 Cloud-Based Inventory Management</h1>
-        
-        <div class="form-box">
-            <input type="text" id="name" placeholder="Product Name">
-            <input type="text" id="category" placeholder="Category">
-            <input type="number" id="price" placeholder="Price">
-            <input type="number" id="quantity" placeholder="Quantity">
-            <button onclick="addItem()">Add Product</button>
+
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fa-solid fa-boxes-stacked"></i> Cloud-Based Inventory</h1>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search products...">
+            </div>
+        </header>
+
+        <!-- Stats Cards (Dashboard Feel) -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Products</h3>
+                <p id="totalCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Stock (Qty)</h3>
+                <p id="totalQty">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Value</h3>
+                <p id="totalValue">₹0</p>
+            </div>
         </div>
 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="inventoryTable"></tbody>
-        </table>
+        <!-- Add Form Card -->
+        <div class="card form-card">
+            <h2>Add New Product</h2>
+            <div class="form-grid">
+                <input type="text" id="name" placeholder="Product Name">
+                <input type="text" id="category" placeholder="Category">
+                <input type="number" id="price" placeholder="Price (₹)">
+                <input type="number" id="quantity" placeholder="Quantity">
+                <button class="btn-add" onclick="addItem()"><i class="fa-solid fa-plus"></i> Add Product</button>
+            </div>
+        </div>
+
+        <!-- Table Card -->
+        <div class="card table-card">
+            <h2>Inventory List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTable"></tbody>
+            </table>
+        </div>
     </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
     <script src="/static/script.js"></script>
 </body>
 </html>
