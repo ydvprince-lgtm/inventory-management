@@ -33,3 +33,4 @@ inventory-management/
 ├── Procfile          # Deployment configuration file
 ├── requirements.txt  # Python package dependencies
 └── README.md         # Project documentation
+https://inventory-management-8-1vo7.onrender.com/
