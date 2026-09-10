@@ -177,3 +177,12 @@ async function deleteItem(id) {
         showToast('Product Deleted!');
     }
 }
+// Product quantity check karke status badge generate karein
+let statusBadge = '';
+if (item.quantity === 0) {
+    statusBadge = `<span class="badge badge-danger"><i class="fa-solid fa-xmark"></i> Out of Stock</span>`;
+} else if (item.quantity < 5) {
+    statusBadge = `<span class="badge badge-warning"><i class="fa-solid fa-triangle-exclamation"></i> Low Stock</span>`;
+} else {
+    statusBadge = `<span class="badge badge-success"><i class="fa-solid fa-check"></i> In Stock</span>`;
+}
