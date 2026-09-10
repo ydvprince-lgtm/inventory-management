@@ -90,3 +90,72 @@
     <script src="/static/script.js?v=4"></script>
 </body>
 </html>
+<!-- <head> section ke andar ye icons CDN line add karein -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Metric Cards Section -->
+<div class="metrics-grid">
+  <div class="stat-card">
+    <div class="stat-icon icon-blue">
+      <i class="fa-solid fa-box"></i>
+    </div>
+    <div class="stat-info">
+      <span class="stat-title">Total Products</span>
+      <h3 class="stat-value">12</h3>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-icon icon-purple">
+      <i class="fa-solid fa-cubes"></i>
+    </div>
+    <div class="stat-info">
+      <span class="stat-title">Total Stock (Qty)</span>
+      <h3 class="stat-value">145</h3>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-icon icon-green">
+      <i class="fa-solid fa-indian-rupee-sign"></i>
+    </div>
+    <div class="stat-info">
+      <span class="stat-title">Total Value</span>
+      <h3 class="stat-value">₹25,400</h3>
+    </div>
+  </div>
+</div>
+
+<!-- Example: Status Badges for Stock Table/List -->
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Stock</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Wireless Mouse</td>
+        <td>Electronics</td>
+        <td>35</td>
+        <td><span class="badge badge-success"><i class="fa-solid fa-check"></i> In Stock</span></td>
+      </tr>
+      <tr>
+        <td>USB Cable</td>
+        <td>Accessories</td>
+        <td>4</td>
+        <td><span class="badge badge-warning"><i class="fa-solid fa-triangle-exclamation"></i> Low Stock</span></td>
+      </tr>
+      <tr>
+        <td>Keyboard</td>
+        <td>Electronics</td>
+        <td>0</td>
+        <td><span class="badge badge-danger"><i class="fa-solid fa-xmark"></i> Out of Stock</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
