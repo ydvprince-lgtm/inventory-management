@@ -75,3 +75,24 @@ tr:hover { background: rgba(128, 128, 128, 0.1); }
 .toast.error { background: #ef4444; }
 
 }
+/* Force All Cards & Header Elements to Dark Mode */
+body.dark-theme,
+body.dark-theme div,
+body.dark-theme .stat-card,
+body.dark-theme .metric-card,
+body.dark-theme [class*="card"] {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme {
+    background-color: #0f172a !important;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme span {
+    color: #ffffff !important;
+}
